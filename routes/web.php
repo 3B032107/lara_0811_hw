@@ -34,7 +34,9 @@ use Illuminate\Support\Facades\Route;
 //Route::get('news/{name?}',['as'=>'news.index',function ($name = 'news'){
 //    return 'Hello, '.$name;
 //}])->name('news.index');
-
-Route::get('/',['as'=>'home.index','uses'=>'HomeController@index']);
-Route::get('/about',['as'=>'about.index','uses'=>'AboutController@index']);
-Route::get('/news',['as'=>'news.index','uses'=>'NewsController@index']);
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\NewsController;
+Route::get('/',[HomeController::class,'index'])->name('home.index');
+Route::get('/about',[HomeController::class,'index'])->name('about.index');
+Route::get('/news',[HomeController::class,'index'])->name('news.index');
