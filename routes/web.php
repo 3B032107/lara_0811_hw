@@ -14,20 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('{home.blade.php}');
+    return view('home.blade.php');
 });
 
 Route::get('/about', function () {
-    return view('{about.blade.php}');
+    return view('about.blade.php');
 });
 
 Route::get('/news', function () {
-    return view('{news.blade.php}');
+    return view('news.blade.php');
 });
 
-Route::get('hello/{name?}',['as'=>'hello.index',function ($name = 'home'){}]);
-Route::get('about/{name?}',['as'=>'about.index',function ($name = 'about'){}]);
-Route::get('news/{name?}',['as'=>'news.index',function ($name = 'news'){}]);
+Route::get('hello/{name?}',['as'=>'hello.index',function ($name = 'home'){
+    return 'Hello, '.$name;
+}])->name('hello.index');
+Route::get('about/{name?}',['as'=>'about.index',function ($name = 'about'){
+    return 'Hello, '.$name;
+}])->name('about.index');
+Route::get('news/{name?}',['as'=>'news.index',function ($name = 'news'){
+    return 'Hello, '.$name;
+}])->name('news.index');
 
 Route::get('/',['as'=>'home.index','uses'=>'HomeController@index']);
 Route::get('/about',['as'=>'about.index','uses'=>'AboutController@index']);
