@@ -38,5 +38,5 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\NewsController;
 Route::get('/',[HomeController::class,'index'])->name('home.index');
-Route::get('/about',[HomeController::class,'index'])->name('about.index');
-Route::get('/news',[HomeController::class,'index'])->name('news.index');
+Route::get('/about',[AboutController::class,'index'])->name('about.index');
+Route::get('/news',[NewsController::class,'index'])->name('news.index');
