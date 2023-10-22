@@ -30,5 +30,5 @@ Route::get('about/{name?}',['as'=>'about.index',function ($name = 'about'){}]);
 Route::get('news/{name?}',['as'=>'news.index',function ($name = 'news'){}]);
 
 Route::get('/',['as'=>'home.index','uses'=>'HomeController@index']);
-Route::get('/',['as'=>'about.index','uses'=>'AboutController@index']);
-Route::get('/',['as'=>'news.index','uses'=>'NewsController@index']);
+Route::get('/about',['as'=>'about.index','uses'=>'AboutController@index']);
+Route::get('/news',['as'=>'news.index','uses'=>'NewsController@index']);
