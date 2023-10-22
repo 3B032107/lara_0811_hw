@@ -25,7 +25,7 @@ Route::get('/news', function () {
     return view('news.blade.php');
 });
 
-Route::get('hello/{name?}',['as'=>'hello.index',function ($name = 'home'){
+Route::get('home/{name?}',['as'=>'home.index',function ($name = 'home'){
     return 'Hello, '.$name;
 }])->name('hello.index');
 Route::get('about/{name?}',['as'=>'about.index',function ($name = 'about'){
